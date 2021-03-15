@@ -1,8 +1,8 @@
 // Assignment code here
-var generateBtn = document.querySelector("#generate")
-const specialCharacters = "!@#$%^&*()";
-generateBtn.addEventListener('click', writePassword);
+var generateBtn = document.querySelector("#generatebtn");
+generateBtn.addEventListener("click", writePassword);
 
+const specialCharacters = "!@#$%^&*()";
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -10,7 +10,6 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
 
 function generatePassword() {
   var passwordLength = prompt("Please enter the number of characters you want for you new password.  It must be at least 8 but less than 128.");
@@ -31,7 +30,6 @@ function generatePassword() {
   var minimumUpperCases = "";
   var minimumSpecialCharacters = "";
 
-
   var functionArray = {
     getNumbers: function() {
       return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
@@ -42,37 +40,35 @@ function generatePassword() {
     },
 
     getUpperCases: function() {
-      return +String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+      return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
     },
 
     getSpecialCharacters: function () {
-      return specialCharacters(Math.floor(Math.random() * specialCharacters.length));
+      return String.fromCharCode(Math.floor(Math.random() * specialCharacters.length));
     }
-
   };
 
   // Ensure users meet requirements
-
   if (numbers === true) {
-    minimumNumbers = functionArray[0];
+    minimumNumbers = functionArray.getNumbers();
     minimumCount++;
 
   }
 
   if (lowerCases === true) {
-    minimumLowerCases = functionArray[1];
+    minimumLowerCases = functionArray.getLowerCases();
     minimumCount++;
 
   }
 
   if (upperCases === true) {
-    minimumUpperCases = functionArray[2];
+    minimumUpperCases = functionArray.getUpperCases();
     minimumCount++;
 
   }
 
   if (special === true) {
-    minimumSpecialCharacters = functionArray[3];
+    minimumSpecialCharacters = functionArray.getSpecialCharacters();
     minimumCount++;
 
   }
@@ -93,5 +89,4 @@ function generatePassword() {
   randomPasswordGenerated += minimumSpecialCharacters;
 
   return randomPasswordGenerated;
-
 }
