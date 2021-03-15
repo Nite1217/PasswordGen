@@ -1,8 +1,7 @@
 // Assignment code here
 var generateBtn = document.querySelector("#generate")
 const specialCharacters = "!@#$%^&*()";
-const generateButton = document.getElementById('generatebtn')
-generateBtnEl.addEventListener('click', writePassword);
+generateBtn.addEventListener('click', writePassword);
 
 // Write password to the #password input
 function writePassword() {
