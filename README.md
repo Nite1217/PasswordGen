@@ -2,6 +2,6 @@
 
  https://nite1217.github.io/PasswordGen/.
 
- <img src="./Develop/PasswordGenScreenShot.png" alt="screenshot of website"/>
+ <img src="./PasswordGen/PasswordGenScreenShot.jpg" alt="screenshot of website"/>
 
 
